@@ -1,0 +1,28 @@
+@* @using Bakery.Models
+
+<h2>Welcome to Pierre's Bakery</h2>
+
+<h3>Menu</h3>
+
+<h4>Treats</h4>
+<ul>
+@foreach (var treats in ViewData["treats"] as List<Treat>)
+{
+    <li>
+        @Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })
+    </li>
+}
+</ul>
+
+<h4>Flavors</h4>
+<ul>
+@foreach (var flavor in ViewData["flavors"] as List<Flavor>)
+{
+    <li>
+        @Html.ActionLink($"{flavor.Description}", "Details", "Flavors", new { id = flavor.FlavorId })
+    </li>
+}
+</ul>
+
+<p>@Html.ActionLink("Go to Treats", "Index", "Treats")</p> 
+<p>@Html.ActionLink("Go to Flavors", "Index", "Flavors")</p> *@
