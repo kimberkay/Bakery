@@ -15,7 +15,7 @@ namespace Bakery.Models
 
     public virtual ApplicationUser User { get; set; }
 
-    public virtual ICollection<FlavorTreat> JoinEntitities { get; }
+    public virtual ICollection<FlavorTreat> JoinEntities { get; }
 
   }
 }

@@ -7,7 +7,7 @@ namespace Bakery.Models
   {
     public Order()
     {
-      this.JoinEntities = new Hashet<FlavorTreat>();
+      this.JoinEntities = new HashSet<FlavorTreat>();
     }
 
     public int OrderId { get; set; }
@@ -20,5 +20,7 @@ namespace Bakery.Models
     public string VendorAddress { get; set; }
 
     public string Days { get; set; }
+
+    public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
   }
 }
