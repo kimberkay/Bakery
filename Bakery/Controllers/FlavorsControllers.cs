@@ -56,7 +56,7 @@ namespace Bakery.Controllers
     {
       var thisFlavor = _db.Flavors
           .Include(flavor => flavor.JoinEntities)
-          .ThenInclude(join => join.Treat)
+          .ThenInclude(join => join.treat)
           .FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
@@ -64,7 +64,7 @@ namespace Bakery.Controllers
     public ActionResult Edit(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(item => item.FlavorId == id);
-      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+      ViewBag.CategoryId = new SelectList(_db.Treats, "CategoryId", "Name");
       return View(thisFlavor);
     }
 
