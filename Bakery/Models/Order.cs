@@ -8,6 +8,7 @@ namespace Bakery.Models
     public Order()
     {
       this.JoinEntities = new HashSet<FlavorTreat>();
+      this.Recurring = false;
     }
 
     public int OrderId { get; set; }
@@ -20,6 +21,8 @@ namespace Bakery.Models
     public string VendorAddress { get; set; }
 
     public string Days { get; set; }
+
+    public bool Recurring { get; set; }
 
     public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
   }
