@@ -1,4 +1,4 @@
-@* @using Bakery.Models
+@using Bakery.Models
 
 <h2>Welcome to Pierre's Bakery</h2>
 
@@ -6,7 +6,7 @@
 
 <h4>Treats</h4>
 <ul>
-@foreach (var treats in ViewData["treats"] as List<Treat>)
+@foreach (var treat in ViewData["treats"] as List<Treat>)
 {
     <li>
         @Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })
@@ -25,4 +25,4 @@
 </ul>
 
 <p>@Html.ActionLink("Go to Treats", "Index", "Treats")</p> 
-<p>@Html.ActionLink("Go to Flavors", "Index", "Flavors")</p> *@
+<p>@Html.ActionLink("Go to Flavors", "Index", "Flavors")</p> 

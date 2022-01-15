@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bakery.Models
 {
-  public class BakeryContext : IdentityDbContext<ApplicationUser>
+  public class BakeryContext : DbContext
   {
     public DbSet<Flavor> Flavors { get; set; }
     public DbSet<Treat> Treats { get; set; }
