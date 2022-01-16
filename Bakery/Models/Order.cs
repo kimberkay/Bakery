@@ -25,5 +25,7 @@ namespace Bakery.Models
     public bool Recurring { get; set; }
 
     public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
+
+    public virtual ApplicationUser User { get; set; }
   }
 }

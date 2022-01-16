@@ -11,6 +11,7 @@ using System.Security.Claims;
 
 namespace Bakery.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly UserManager<ApplicationUser> _userManager;
