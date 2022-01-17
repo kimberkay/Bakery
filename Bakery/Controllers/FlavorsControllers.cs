@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 namespace Bakery.Controllers
 {
-  [Authorize]
+
   public class FlavorsController : Controller
   {
     private readonly UserManager<ApplicationUser> _userManager;
@@ -23,7 +23,7 @@ namespace Bakery.Controllers
       _db = db;
     }
 
-    [AllowAnonymous]
+    
      public ActionResult Index()
     {
       List<Flavor> model = _db.Flavors.ToList();
