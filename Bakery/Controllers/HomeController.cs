@@ -20,9 +20,9 @@ namespace Bakery.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-        ViewData["flavors"]= _db.Flavors.ToList();
-        ViewData["treats"] = _db.Treats.ToList();
-        return View();
-       }
+            ViewData["flavors"]= _db.Flavors.ToList();
+            ViewData["treats"] = _db.Treats.ToList();
+            return View();
+        }
     }
 }
