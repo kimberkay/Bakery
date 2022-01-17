@@ -2,8 +2,6 @@
 
 <h2>Welcome to Viking Bakery Company</h2>
 
-<h3>Menu</h3>
-
 <h4>Treats</h4>
 <ul>
 @foreach (var treat in ViewData["treats"] as List<Treat>)
@@ -26,3 +24,4 @@
 
 <p>@Html.ActionLink("Go to Treats", "Index", "Treats")</p> 
 <p>@Html.ActionLink("Go to Flavors", "Index", "Flavors")</p> 
+<p>@Html.ActionLink("Create an account", "Index", "Account")</p>
