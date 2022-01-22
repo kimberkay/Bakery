@@ -2,7 +2,7 @@
 
 namespace Bakery.Migrations
 {
-    public partial class AuthAgain : Migration
+    public partial class Authorization : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

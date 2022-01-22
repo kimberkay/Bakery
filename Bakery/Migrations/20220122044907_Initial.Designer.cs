@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bakery.Migrations
 {
     [DbContext(typeof(BakeryContext))]
-    [Migration("20220117044417_addIdentity")]
-    partial class addIdentity
+    [Migration("20220122044907_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -111,9 +111,6 @@ namespace Bakery.Migrations
                     b.Property<int>("FlavorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TreatId")
                         .HasColumnType("int");
 
@@ -121,45 +118,9 @@ namespace Bakery.Migrations
 
                     b.HasIndex("FlavorId");
 
-                    b.HasIndex("OrderId");
-
                     b.HasIndex("TreatId");
 
                     b.ToTable("FlavorTreat");
-                });
-
-            modelBuilder.Entity("Bakery.Models.Order", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Days")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<DateTime>("DeliveryDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<bool>("Recurring")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Vendor")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("VendorAddress")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("OrderId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Bakery.Models.Treat", b =>
@@ -326,12 +287,6 @@ namespace Bakery.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Bakery.Models.Order", "order")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Bakery.Models.Treat", "treat")
                         .WithMany("JoinEntities")
                         .HasForeignKey("TreatId")
@@ -340,18 +295,7 @@ namespace Bakery.Migrations
 
                     b.Navigation("flavor");
 
-                    b.Navigation("order");
-
                     b.Navigation("treat");
-                });
-
-            modelBuilder.Entity("Bakery.Models.Order", b =>
-                {
-                    b.HasOne("Bakery.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Bakery.Models.Treat", b =>
@@ -415,11 +359,6 @@ namespace Bakery.Migrations
                 });
 
             modelBuilder.Entity("Bakery.Models.Flavor", b =>
-                {
-                    b.Navigation("JoinEntities");
-                });
-
-            modelBuilder.Entity("Bakery.Models.Order", b =>
                 {
                     b.Navigation("JoinEntities");
                 });

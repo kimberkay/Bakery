@@ -1,7 +1,7 @@
 
 @model Bakery.Models.Flavor
 
-<h2>Item Details</h2>
+<h2>Flavor Details</h2>
 
 <h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
 
@@ -25,7 +25,7 @@ else
   </ul>
 }
 
-<p>@Html.ActionLink("Add a Category", "AddCategory", new { id = Model.FlavorId })</p>
+<p>@Html.ActionLink("Add a Treat", "AddTreat", new { id = Model.FlavorId })</p>
 
 <p>@Html.ActionLink("Back to Flavors", "Index")</p>
 <p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>

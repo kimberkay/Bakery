@@ -9,8 +9,6 @@ namespace Bakery.Models
     public DbSet<Treat> Treats { get; set; }
     public DbSet<FlavorTreat> FlavorTreat { get; set; }
 
-    public DbSet<Order> Orders { get; set; }
-
 
     public BakeryContext(DbContextOptions options) : base(options) { }
 
