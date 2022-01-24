@@ -52,7 +52,7 @@ namespace Bakery.Controllers
     {
       var thisTreat = _db.Treats
           .Include(treat => treat.JoinEntities)
-          .ThenInclude(join => join.FlavorId)
+          .ThenInclude(join => join.flavor)
           .FirstOrDefault(treat => treat.TreatId == id);
       return View(thisTreat);
     }

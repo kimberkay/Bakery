@@ -3,6 +3,7 @@
 <h2>Welcome to Viking Bakery Company</h2>
 
 <h4>Treats</h4>
+
 <ul>
 @foreach (var treat in ViewData["treats"] as List<Treat>)
 {
@@ -12,8 +13,10 @@
 }
 </ul>
 
+
 <h4>Flavors</h4>
 <ul>
+
 @foreach (var flavor in ViewData["flavors"] as List<Flavor>)
 {
     <li>
