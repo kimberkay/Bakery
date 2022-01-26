@@ -16,8 +16,9 @@ else
   @foreach(var join in Model.JoinEntities)
   {
     <li>@join.treat.Name</li>
-    @using (Html.BeginForm("DeleteFlavor", "Flavors"))
+
   }
+}
   </ul>
 }
 
